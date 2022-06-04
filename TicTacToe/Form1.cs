@@ -28,18 +28,31 @@ namespace TicTacToe
                     turns++;
                 }
             }
+
+            if (Draw() == true)
+            {
+                MessageBox.Show("Draw!!");
+            }
         }
 
         void ResetGame()
         {
             player = 1;
             turns = 0;
-            L1.Text = L2.Text = L3.Text = M1.Text = M2.Text = M3.Text = R1.Text = R2.Text = R3.Text = "";
+            L1.Text = L2.Text = L3.Text = M1.Text = M2.Text = M3.Text = R1.Text = R2.Text = R3.Text = "-Click Me-";
         }
 
         private void Reset_Click(object sender, EventArgs e)
         {
             ResetGame();
+        }
+
+        bool Draw()
+        {
+            if (turns == 10)
+                return true;
+            else
+                return false;
         }
     }
 }
