@@ -28,6 +28,17 @@ namespace TicTacToe
                     turns++;
                 }
             }
+            if (Winner() == true)
+            {
+                if (button.Text == "X")
+                {
+                    MessageBox.Show("X is the Winner");
+                }
+                else
+                {
+                    MessageBox.Show("O is the Winner");
+                }
+            }
 
             if (Draw() == true)
             {
@@ -38,8 +49,8 @@ namespace TicTacToe
         void ResetGame()
         {
             player = 1;
-            turns = 0;
-            L1.Text = L2.Text = L3.Text = M1.Text = M2.Text = M3.Text = R1.Text = R2.Text = R3.Text = "-Click Me-";
+            turns = 1;
+            L1.Text = L2.Text = L3.Text = M1.Text = M2.Text = M3.Text = R1.Text = R2.Text = R3.Text = "";
         }
 
         private void Reset_Click(object sender, EventArgs e)
@@ -47,6 +58,29 @@ namespace TicTacToe
             ResetGame();
         }
 
+        bool Winner()
+        {
+            if ((L1.Text == M1.Text) && (M1.Text == R1.Text) && L1.Text != "")
+                return true;
+            else if ((L2.Text == M2.Text) && (M2.Text == R2.Text) && L2.Text != "")
+                return true;
+            else if ((L3.Text == M3.Text) && (M3.Text == R3.Text) && L3.Text != "")
+                return true;
+
+            if ((L1.Text == L2.Text) && (L2.Text == L3.Text) && L1.Text != "")
+                return true;
+            else if ((M1.Text == M2.Text) && (M2.Text == M3.Text) && M1.Text != "")
+                return true;
+            else if ((R1.Text == R2.Text) && (R2.Text == R3.Text) && R1.Text != "")
+                return true;
+
+            if ((L1.Text == M2.Text) && (M2.Text == R3.Text) && L1.Text != "")
+                return true;
+            else if ((R1.Text == M2.Text) && (M2.Text == L3.Text) && R1.Text != "")
+                return true;
+            else
+                return false;
+        }
         bool Draw()
         {
             if (turns == 10)
