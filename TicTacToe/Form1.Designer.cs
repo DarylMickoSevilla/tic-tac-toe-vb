@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    partial class Form1
+    partial class TicTacToe
     {
         /// <summary>
         ///  Required designer variable.
@@ -38,6 +38,7 @@
             this.M3 = new System.Windows.Forms.Button();
             this.R3 = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // L1
@@ -150,6 +151,7 @@
             // 
             // Reset
             // 
+            this.Reset.BackColor = System.Drawing.Color.Black;
             this.Reset.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Reset.Location = new System.Drawing.Point(548, 150);
@@ -157,15 +159,29 @@
             this.Reset.Size = new System.Drawing.Size(162, 48);
             this.Reset.TabIndex = 9;
             this.Reset.Text = "Reset";
-            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.UseVisualStyleBackColor = false;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // Form1
+            // Exit
+            // 
+            this.Exit.BackColor = System.Drawing.Color.Black;
+            this.Exit.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Exit.ForeColor = System.Drawing.Color.Red;
+            this.Exit.Location = new System.Drawing.Point(545, 293);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(165, 55);
+            this.Exit.TabIndex = 10;
+            this.Exit.Text = "Exit";
+            this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(811, 460);
+            this.ClientSize = new System.Drawing.Size(816, 460);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.R3);
             this.Controls.Add(this.M3);
@@ -176,8 +192,9 @@
             this.Controls.Add(this.R1);
             this.Controls.Add(this.M1);
             this.Controls.Add(this.L1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TicTacToe";
+            this.Text = "Tic-Tac-Toe";
+            this.Load += new System.EventHandler(this.TicTacToe_Load);
             this.ResumeLayout(false);
 
         }
@@ -194,5 +211,6 @@
         private Button M3;
         private Button R3;
         private Button Reset;
+        private Button Exit;
     }
 }
