@@ -37,6 +37,7 @@
             this.L3 = new System.Windows.Forms.Button();
             this.M3 = new System.Windows.Forms.Button();
             this.R3 = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // L1
@@ -147,12 +148,25 @@
             this.R3.UseVisualStyleBackColor = false;
             this.R3.Click += new System.EventHandler(this.onclick);
             // 
+            // Reset
+            // 
+            this.Reset.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Reset.Location = new System.Drawing.Point(548, 150);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(162, 48);
+            this.Reset.TabIndex = 9;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(811, 460);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.R3);
             this.Controls.Add(this.M3);
             this.Controls.Add(this.L3);
@@ -179,5 +193,6 @@
         private Button L3;
         private Button M3;
         private Button R3;
+        private Button Reset;
     }
 }
